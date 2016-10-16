@@ -10,13 +10,26 @@ import {createLayers, cascadeLayers, createReactElement} from 'cascading-compone
 function render( props ){
      const layers = createLayers( React => [
         layout: () =>
-            <panel layout="border"></panel>,
+            <panel layout="border" height="100" />,
         stateManagement: () =>
-            <panel><store/></panel>,
+            <panel onClick={doSomething()}>
+                <store/>
+            </panel>,
     ])
     return createReactElement( cascadeLayers( layers, props ))
 }
 ```
+Will behave like:
+```jsx
+function render( props ){
+    return (
+        <panel layout="border" height="100" onClick={doSomething()}>
+            <store/>
+        </panel>
+    )
+}
+```
+
 #### What?
 
 Let suppose that we have some complex component tree. For Example:
