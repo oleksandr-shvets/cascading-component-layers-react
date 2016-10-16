@@ -1,0 +1,22 @@
+{
+  "name": "cascading-component-layers-react",
+  "version": "0.0.2-alpha",
+  "description": "design pattern to slice complex component trees",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel-cli"
+  },
+  "keywords": [
+    "cascading-component-layers",
+    "ccl",
+    "react"
+  ],
+  "author": "Alexander Shvets",
+  "license": "ISC",
+  "dependencies": {
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.16.0"
+  }
+}

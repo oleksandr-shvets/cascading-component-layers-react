@@ -1,0 +1,53 @@
+%% Layers http://knsv.github.io/mermaid/live_editor/#/edit/JSUgTGF5ZXJzCmdyYXBoIFRCCiAgICAgICAgIHN1YmdyYXBoIElucHV0IFZhbGlkYXRpb24gTGF5ZXIKICAgICAgICAgdjEoKGNvbWJvKSkKICAgICAgICAgZW5kCiAgICAgICAgIHN1YmdyYXBoIFN0YXRlIE1hbmFnZW1lbnQgTGF5ZXIKICAgICAgICAgczEoKHRyZWUpKSAtLT4gczFfMSgoc3RvcmUpKQogICAgICAgICBzMigoZ3JpZCkpIC0tPiBzMl8xKChzdG9yZSkpCiAgICAgICAgIHMyICAgICAgICAgLS0-IHMyXzIoKGNvbWJvKSkKICAgICAgICAgczIgICAgICAgICAtLT4gczJfMygoYnV0dG9uIDxici8-IEFkZCkpCiAgICAgICAgIHMyICAgICAgICAgLS0-IHMyXzQoKGJ1dHRvbiA8YnIvPiBEZWxldGUpKQogICAgICAgICBlbmQKICAgICAgICAgc3ViZ3JhcGggTGF5b3V0IExheWVyCiAgICAgICAgIGwxKCh2aWV3cG9ydCkpIC0tPiBsMV8xKCh0cmVlKSkKICAgICAgICAgbDEgICAgICAgICAgICAgLS0-IGwxXzIoKGdyaWQpKQogICAgICAgICBsMV8yICAgICAgICAgICAtLT4gbDFfMl8xKCh0b29sYmFyKSkKICAgICAgICAgbDFfMl8xICAgICAgICAgLS0-IGwxXzJfMV8xKChjb21ibykpCiAgICAgICAgIGwxXzJfMSAgICAgICAgIC0tPiBsMV8yXzFfMigoYnV0dG9uIDxici8-IEFkZCkpCiAgICAgICAgIGwxXzJfMSAgICAgICAgIC0tPiBsMV8yXzFfMygoYnV0dG9uIDxici8-IERlbGV0ZSkpCiAgICAgICAgIGVuZA
+graph TB
+         subgraph Input Validation Layer
+         v1((combo))
+         end
+         subgraph State Management Layer
+         s1((tree)) --> s1_1((store))
+         s2((grid)) --> s2_1((store))
+         s2         --> s2_2((combo))
+         s2         --> s2_3((button <br/> Add))
+         s2         --> s2_4((button <br/> Delete))
+         end
+         subgraph Layout Layer
+         l1((viewport)) --> l1_1((tree))
+         l1             --> l1_2((grid))
+         l1_2           --> l1_2_1((toolbar))
+         l1_2_1         --> l1_2_1_1((combo))
+         l1_2_1         --> l1_2_1_2((button <br/> Add))
+         l1_2_1         --> l1_2_1_3((button <br/> Delete))
+         end
+
+
+graph TB
+         subgraph Input Validation Layer
+         i1(("&nbsp;")) --> i1_1(("&nbsp;"))
+         i1_1           --> i1_1_1(("&nbsp;"))
+         i1             --> i1_2(("&nbsp;"))
+         i1_2           --> i1_2_1(("&nbsp;"))
+         i1_2_1         --> i1_2_1_1((combo))
+         i1_2_1         --> i1_2_1_2(("&nbsp;"))
+         i1_2_1         --> i1_2_1_3(("&nbsp;"))
+         i1_2           --> i1_2_2(("&nbsp;"))
+         end
+         subgraph State Management Layer
+         s1(("&nbsp;")) --> s1_1((tree))
+         s1_1           --> s1_1_1((store))
+         s1             --> s1_2((grid))
+         s1_2           --> s1_2_1(("&nbsp;"))
+         s1_2_1         --> s1_2_1_1((combo))
+         s1_2_1         --> s1_2_1_2((button <br/> Add))
+         s1_2_1         --> s1_2_1_3((button <br/> Delete))
+         s1_2           --> s1_2_2((store))
+         end
+         subgraph Layout Layer
+         l1((viewport)) --> l1_1((tree))
+         l1_1           --> l1_1_1(("&nbsp;"))
+         l1             --> l1_2((grid))
+         l1_2           --> l1_2_1((toolbar))
+         l1_2_1         --> l1_2_1_1((combo))
+         l1_2_1         --> l1_2_1_2((button <br/> Add))
+         l1_2_1         --> l1_2_1_3((button <br/> Delete))
+         l1_2           --> l1_2_2(("&nbsp;"))
+         end
