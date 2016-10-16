@@ -30,7 +30,7 @@ function render(){
 }
 ```
 
-##### What?
+#### What?
 
 Let suppose that we have some complex component model. For Example:
 
@@ -134,8 +134,8 @@ can share the same components.** See picture:
 ![Layers diagram](images/layers-empty-nodes.png)
 
 To do that kind of splitting, we can extract these abstractions into function-layers and merge it together on render.
-Function-layer is the special type of component, that have injected custom createElement method, that produce layer
-elements (pure objects: {type, props, childs}), that can be converted to the React elements by the createReactElement
+Function-layer is the special type of component, that have injected custom `React.createElement` method, which produce
+layer elements (pure objects: `{type, props, childs}`), that can be converted to React elements by the `createReactElement`
 method.
 ```jsx
 function render(){
@@ -185,10 +185,11 @@ function render(){
     return createReactElement( cascadeLayers( layers, this ))
 }
 ```
-##### Profit?
+#### Profit!
 
-Now we can simply **turn of Input Validation by removing last layer**:
+*Theoretical:* Separation of concerns.
 
+*Practical:* Now we can simply **turn of Input Validation by removing last layer**:
 ```js
     layers.pop() // <--
     return createReactElement( cascadeLayers( layers, this ))
