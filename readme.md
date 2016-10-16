@@ -82,7 +82,7 @@ function render(){
 }
 ```
 
-To refactor it, we can extract sub-nodes into separate components.
+To refactor it, we can extract sub-nodes into separate component(s).
 
 ```jsx
 function render(){
@@ -135,8 +135,8 @@ can share the same components.** See picture:
 
 To do that kind of splitting, we can extract these abstractions into function-layers and merge it together on render.
 Function-layer is the special type of component, that have injected custom `React.createElement` method, which produce
-layer elements (pure objects: `{type, props, childs}`), that can be converted to React elements by the `createReactElement`
-method.
+layer elements (pure objects: `{type, props, childs}`), that can be converted back to React element by the
+`createReactElement` method.
 ```jsx
 function render(){
 
@@ -185,7 +185,7 @@ function render(){
     return createReactElement( cascadeLayers( layers, this ))
 }
 ```
-#### Profit!
+#### Profit?
 
 *Theoretical:* Separation of concerns.
 
@@ -197,15 +197,16 @@ function render(){
 
 #### Dash Directives
 
-This is angular-like directives to transform layer jsx tree. For example:
+This is special directives to transform jsx tree in layers. For example:
 ```jsx
 <xtype-tree bind--disabled="{checkbox.checked}" pull-childs>
-    <store model="Letter"/>
+     <store model="Letter"/>
 </xtype-tree>
 ```
 Will be transformed to:
 ```jsx
-<tree xtype="tree" bind={ {disabled: "{checkbox.checked}"} } store={ {model: "Letter"} } />
+<tree xtype="tree" bind={ {disabled: "{checkbox.checked}"} }
+      store={ {model: "Letter"} } />
 ```
 
 ### Install
