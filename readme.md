@@ -21,6 +21,8 @@ Design pattern to slice complex component trees.
 
 Let suppose that we have some complex component tree. For Example:
 
+![UI screenshot](images/ui-screenshot.png)
+
 ![Components tree](images/components-tree-wide.png)
 
 ```javascript
