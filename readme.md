@@ -21,6 +21,8 @@ Design pattern to slice complex component trees.
 
 Let suppose that we have some complex component tree. For Example:
 
+![Components tree](images/components-tree.png)
+
 ```javascript
     function render(){
         return (
@@ -156,7 +158,7 @@ To do that kind of splitting, we can extract these abstractions into layers and 
                 <viewport><grid><combo vtype="alpha" allowBlank="false" maxLength="1" validateOnBlur="false"/></grid></viewport>
             )},
         ])
-        /** @private shared sub-component */
+        /** shared sub-component */
         function LettersStore(){
             return (
             <store proxy="memory" model="LetterModel" pull-childs>
