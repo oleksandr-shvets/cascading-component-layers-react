@@ -7,7 +7,7 @@ Design pattern to slice complex component trees.
 ```jsx
 import {createLayers, cascadeLayers, createReactElement} from 'cascading-component-layers-react'
 
-function render( props ){
+function render(){
      const layers = createLayers( React => [
         layout: () =>
             <panel layout="border" height="100" />,
@@ -21,7 +21,7 @@ function render( props ){
 ```
 Will behave like:
 ```jsx
-function render( props ){
+function render(){
     return (
         <panel layout="border" height="100" onClick={doSomething()}>
             <store/>
@@ -30,9 +30,9 @@ function render( props ){
 }
 ```
 
-#### What?
+##### What?
 
-Let suppose that we have some complex component tree. For Example:
+Let suppose that we have some complex component model. For Example:
 
 ![UI screenshot](images/ui-screenshot.png)
 
@@ -133,8 +133,10 @@ can share the same components.** See picture:
 
 ![Layers diagram](images/layers-empty-nodes.png)
 
-To do that kind of splitting, we can extract these abstractions into layers and merge it on render:
-
+To do that kind of splitting, we can extract these abstractions into function-layers and merge it together on render.
+Function-layer is the special type of component, that have injected custom createElement method, that produce layer
+elements (pure objects: {type, props, childs}), that can be converted to the React elements by the createReactElement
+method.
 ```jsx
 function render(){
 
@@ -183,6 +185,7 @@ function render(){
     return createReactElement( cascadeLayers( layers, this ))
 }
 ```
+##### Profit?
 
 Now we can simply **turn of Input Validation by removing last layer**:
 
