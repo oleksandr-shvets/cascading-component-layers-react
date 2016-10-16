@@ -113,8 +113,8 @@ To refactor it, we can extract sub-nodes into separate components.
 ```
 
 That's OK. But what if we want to group components and props of different nodes in our components tree?
-For what? To extract abstractions like layout, state management, input validation. Different abstractions
-can share the same components. 
+For what? To extract abstractions like layout, state management, input validation. **Different abstractions
+can share the same components.** 
 
 ![Layers diagram](images/layers-empty-nodes.png)
 
@@ -169,7 +169,7 @@ To do that kind of splitting, we can extract these abstractions into layers and 
     }
 ```
 
-Now we can simply turn of Input Validation by removing last layer:
+Now we can simply **turn of Input Validation by removing last layer**:
 
 ```javascript
     layers.pop() // <--
