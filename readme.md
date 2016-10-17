@@ -1,10 +1,10 @@
 Cascading Component Layers for React
 ------------------------------------
-Design pattern to slice complex component trees.
+*Design pattern to slice complex component trees.*
 
+The main idea of CCL is in props composition of different layers. Each layer may contain the same components, but with different props. Mainly, layer is the props collection of some components. `composeLayers` method will attach component props from one layer to corresponding components of other layer (if layer hasn’t that component, it will be added).
 
 #### [Introduction at Medium](https://medium.com/@alexandershvets_97490/cascading-component-layers-for-react-b958f9cdee7e)
-
 
 ### Usage
 
