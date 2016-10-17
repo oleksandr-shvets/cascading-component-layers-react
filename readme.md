@@ -30,7 +30,7 @@ function render(){
 }
 ```
 
-#### What?
+#### So What?
 
 Let suppose that we have some complex component model. For Example:
 
@@ -82,7 +82,7 @@ function render(){
 }
 ```
 
-To refactor it, we can extract sub-nodes into separate component(s).
+To refactor it, we can extract sub-nodes into separate component(s):
 
 ```jsx
 function render(){
@@ -127,14 +127,18 @@ function render(){
 }
 ```
 
-That's OK. But what if we want to group components and props of different nodes in our components tree?
-To extract abstractions like layout, state management, input validation. **Different abstractions
-can share the same components.** See picture:
+That’s OK. But what if we want to group components and props of different places in our components tree?
+To extract separate abstractions like:
+* Layout
+* State Management
+* Input Validation
+
+__Different abstractions can share the same components.__ See picture:
 
 ![Layers diagram](images/layers-empty-nodes.png)
 
-To do that kind of splitting, we can extract these abstractions into function-layers and merge it together on render.
-Function-layer is the special type of component, that have injected custom `React.createElement` method, which produce
+To do that kind of separation, we can extract these abstractions into function-layers, and merge it together on render.
+Function-layer is the special kind of component, that have injected custom `React.createElement` method, which produce
 layer elements (pure objects: `{type, props, childs}`), that can be converted back to React element by the
 `createReactElement` method.
 ```jsx
