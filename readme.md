@@ -9,7 +9,7 @@ Design pattern to slice complex component trees.
 ### Usage
 
 ```jsx
-import {createLayers, cascadeLayers, createReactElement} from 'cascading-component-layers-react'
+import {createLayers, composeLayers, createReactElement} from 'cascading-component-layers-react'
 
 function render(){
      const layers = createLayers( React => [
@@ -20,7 +20,7 @@ function render(){
                 <store/>
             </panel>,
     ])
-    return createReactElement( cascadeLayers( layers, props ))
+    return createReactElement( composeLayers( layers, props ))
 }
 ```
 Will behave like:
