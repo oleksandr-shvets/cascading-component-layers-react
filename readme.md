@@ -3,7 +3,7 @@ Cascading Component Layers for React
 Design pattern to slice complex component trees.
 
 
-[Introduction at Medium](https://medium.com/@alexandershvets_97490/cascading-component-layers-for-react-b958f9cdee7e)
+#### [Introduction at Medium](https://medium.com/@alexandershvets_97490/cascading-component-layers-for-react-b958f9cdee7e)
 
 
 ### Usage
