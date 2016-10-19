@@ -4,7 +4,7 @@ Cascading Component Layers for React
 
 The main idea of CCL is in props composition of different layers. Each next layer may contain the same components as before, but with different props. Mainly, layer is the props collection of some components. `composeLayers` method will attach component props from one layer to corresponding components of other layer (if layer hasn’t that component, it will be added).
 
-#### [Introduction at Medium](https://medium.com/@alexandershvets_97490/cascading-component-layers-for-react-b958f9cdee7e)
+#### [Introduction at Medium](http://medium.com/@alex.shvets/cascading-component-layers-for-react-b958f9cdee7e)
 
 ### Usage
 
